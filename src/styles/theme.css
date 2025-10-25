@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light dark;
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Clash Display", "Poppins", var(--font-sans);
+  --color-bg: #07071f;
+  --color-surface: rgba(13, 12, 34, 0.85);
+  --color-surface-strong: rgba(24, 24, 48, 0.92);
+  --color-card: rgba(32, 29, 72, 0.9);
+  --color-card-border: rgba(140, 126, 255, 0.3);
+  --color-primary: #7c4dff;
+  --color-primary-strong: #a855f7;
+  --color-accent: #f48fb1;
+  --color-success: #4ade80;
+  --color-warning: #facc15;
+  --color-danger: #f87171;
+  --color-text: #f5f7ff;
+  --color-text-muted: rgba(210, 214, 255, 0.8);
+  --shadow-elevated: 0 30px 60px rgba(17, 12, 46, 0.35);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --header-height: 76px;
+  --debug-height: 360px;
+  --gradient-hero: linear-gradient(120deg, rgba(108, 99, 255, 0.75), rgba(244, 143, 177, 0.55));
+  --gradient-card: linear-gradient(160deg, rgba(124, 77, 255, 0.22), rgba(244, 143, 177, 0.16));
+  --gradient-border: linear-gradient(135deg, rgba(124, 77, 255, 0.7), rgba(244, 143, 177, 0.7));
+  --page-background: radial-gradient(circle at 5% 15%, rgba(124, 77, 255, 0.22), transparent 55%),
+    radial-gradient(circle at 95% 25%, rgba(244, 143, 177, 0.18), transparent 45%),
+    #050513;
+  --page-overlay: radial-gradient(circle at 20% 20%, rgba(124, 77, 255, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(244, 143, 177, 0.12), transparent 38%);
+
+  /* Motion tokens */
+  --motion-fast: 120ms;
+  --motion-medium: 220ms;
+  --motion-slow: 450ms;
+  --easing-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #02010f;
+  --color-surface: rgba(6, 7, 22, 0.9);
+  --color-surface-strong: rgba(10, 12, 28, 0.94);
+  --color-card: rgba(12, 14, 32, 0.92);
+  --color-card-border: rgba(99, 102, 241, 0.4);
+  --color-primary: #6366f1;
+  --color-primary-strong: #818cf8;
+  --color-accent: #f472b6;
+  --color-success: #34d399;
+  --color-warning: #fcd34d;
+  --color-danger: #f87171;
+  --color-text: #f7f8ff;
+  --color-text-muted: rgba(198, 201, 255, 0.78);
+  --shadow-elevated: 0 34px 60px rgba(6, 5, 25, 0.5);
+  --gradient-hero: linear-gradient(120deg, rgba(99, 102, 241, 0.55), rgba(244, 114, 182, 0.35));
+  --gradient-card: linear-gradient(160deg, rgba(99, 102, 241, 0.18), rgba(244, 114, 182, 0.14));
+  --gradient-border: linear-gradient(135deg, rgba(99, 102, 241, 0.78), rgba(244, 114, 182, 0.66));
+  --page-background: radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.16), transparent 55%),
+    radial-gradient(circle at 85% 12%, rgba(244, 114, 182, 0.14), transparent 45%),
+    radial-gradient(circle at 50% 120%, rgba(14, 23, 60, 0.36), transparent 65%),
+    linear-gradient(160deg, #02010f 0%, #040622 55%, #060b33 100%);
+  --page-overlay: radial-gradient(circle at 18% 24%, rgba(167, 139, 250, 0.09), transparent 45%),
+    radial-gradient(circle at 78% 18%, rgba(244, 114, 182, 0.1), transparent 42%),
+    radial-gradient(circle at 50% 120%, rgba(45, 53, 120, 0.12), transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

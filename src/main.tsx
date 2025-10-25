@@ -1,0 +1,50 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { ThemeProvider } from "./context/ThemeContext";
+import { AuthProvider } from "./context/AuthContext";
+import { AnnouncementsProvider } from "./context/AnnouncementsContext";
+import { ProviderRegistryProvider } from "./context/ProviderContext";
+import { LibraryProvider } from "./context/LibraryContext";
+import { WorkspaceProvider } from "./context/WorkspaceContext";
+import { DebugProvider } from "./context/DebugContext";
+import { AchievementsProvider } from "./context/AchievementsContext";
+import { ModerationProvider } from "./context/ModerationContext";
+import { RolesProvider } from "./context/RolesContext";
+import { FeedbackProvider } from "./context/FeedbackContext";
+import "./styles/global.css";
+import "./styles/theme.css";
+
+const rootElement = document.getElementById("root");
+if (!rootElement) throw new Error("Root element #root not found");
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <ThemeProvider>
+        <DebugProvider>
+          <AuthProvider>
+            <AnnouncementsProvider>
+              <ModerationProvider>
+                <RolesProvider>
+                  <FeedbackProvider>
+                    <AchievementsProvider>
+                      <ProviderRegistryProvider>
+                        <LibraryProvider>
+                          <WorkspaceProvider>
+                            <App />
+                          </WorkspaceProvider>
+                        </LibraryProvider>
+                      </ProviderRegistryProvider>
+                    </AchievementsProvider>
+                  </FeedbackProvider>
+                </RolesProvider>
+              </ModerationProvider>
+            </AnnouncementsProvider>
+          </AuthProvider>
+        </DebugProvider>
+      </ThemeProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
