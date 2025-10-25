@@ -1,4 +1,4 @@
-﻿import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { generateId, hashPassword } from '../utils/crypto';
 import { isEmailBlacklisted, isPasswordBlacklisted } from '../utils/blacklist';
 
@@ -66,7 +66,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 // Developer accounts configuration
 const DEV_ACCOUNTS = ["masondaking"];
 const ADMIN_ACCOUNTS = ["darnix"];
-const DEFAULT_AVATAR_EMOJI = 'âœ¨';
+const DEFAULT_AVATAR_EMOJI = '✨';
 const DEFAULT_ACCENT_COLOR = '#7c3aed';
 
 async function digestPassword(password: string, username: string): Promise<string> {
@@ -360,14 +360,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (emailMatch) {
       if (emailMatch.banned) {
         const reason = emailMatch.banReason ? `: ${emailMatch.banReason}` : '';
-        throw new Error(`Sign up blocked â€” this email is banned${reason}`);
+        throw new Error(`Sign up blocked — this email is banned${reason}`);
       }
       throw new Error('An account with this email already exists');
     }
     const usernameMatch = users[username];
     if (usernameMatch && usernameMatch.banned) {
       const reason = usernameMatch.banReason ? `: ${usernameMatch.banReason}` : '';
-      throw new Error(`Sign up blocked â€” this username is banned${reason}`);
+      throw new Error(`Sign up blocked — this username is banned${reason}`);
     }
     const id = generateId('user');
     const stored: StoredUser = {
@@ -396,7 +396,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       email: stored.email,
       isDev: DEV_ACCOUNTS.includes(stored.username.toLowerCase()),
       isAdmin: ADMIN_ACCOUNTS.includes(stored.username.toLowerCase()),
-              isAdmin: ADMIN_ACCOUNTS.includes(stored.username.toLowerCase()),
+
       createdAt: stored.createdAt,
       banned: false,
       banReason: undefined,
