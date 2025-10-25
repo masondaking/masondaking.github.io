@@ -34,7 +34,7 @@ const proxyConfig: Record<string, ProxyOptions> = {
   },
 };
 
-export default defineConfig({
+export default defineConfig({`n  base: '/',
   plugins: [react()],
   server: {
     port: 5173,
@@ -42,3 +42,4 @@ export default defineConfig({
     proxy: proxyConfig,
   },
 });
+
